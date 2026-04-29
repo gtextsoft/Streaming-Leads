@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Stephen Akintayo | Investor Application</title>
+  <meta
+    name="description"
+    content="Apply for direct access to real estate investment opportunities, proven business strategies, and mentorship from Dr. Stephen Akintayo."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --bg: #07090f;
+      --surface: #0f1525;
+      --surface-2: #121b31;
+      --text: #e8edf8;
+      --muted: #b5bfd8;
+      --line: #24304f;
+      --brand: #d5a941;
+      --brand-2: #f0cf7b;
+      --danger: #ff8d8d;
+      --success: #88e5ad;
+      --max-width: 1140px;
+      --radius: 18px;
+      --shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Inter", sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at top right, #152142 0%, var(--bg) 42%), var(--bg);
+      scroll-behavior: smooth;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--max-width), 92vw);
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 4.5rem 0;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 0.45rem 0.9rem;
+      border: 1px solid rgba(240, 207, 123, 0.35);
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--brand-2);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4.5vw, 3.4rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+    }
+
+    h2 {
+      font-size: clamp(1.55rem, 2.6vw, 2.2rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 1.02rem;
+    }
+
+    .hero {
+      padding: 6rem 0 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 380px;
+      height: 380px;
+      top: -120px;
+      right: -110px;
+      background: radial-gradient(circle, rgba(240, 207, 123, 0.25) 0%, rgba(240, 207, 123, 0) 70%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero-copy {
+      display: grid;
+      gap: 1.2rem;
+    }
+
+    .authority {
+      color: #d2daf0;
+      font-weight: 600;
+      padding: 1rem 1.1rem;
+      border-left: 3px solid var(--brand);
+      background: rgba(213, 169, 65, 0.12);
+      border-radius: 10px;
+      width: fit-content;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: fit-content;
+      border: 0;
+      cursor: pointer;
+      font: inherit;
+      color: #111;
+      background: linear-gradient(135deg, var(--brand) 0%, var(--brand-2) 100%);
+      font-weight: 800;
+      border-radius: 12px;
+      padding: 0.95rem 1.35rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 10px 26px rgba(213, 169, 65, 0.3);
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 28px rgba(213, 169, 65, 0.36);
+    }
+
+    .hero-card {
+      background: linear-gradient(150deg, rgba(18, 27, 49, 1) 0%, rgba(15, 21, 37, 1) 100%);
+      border: 1px solid rgba(240, 207, 123, 0.26);
+      border-radius: var(--radius);
+      padding: 1.2rem;
+      box-shadow: var(--shadow);
+    }
+
+    .media {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: #0d1322;
+      min-height: 280px;
+      display: grid;
+      place-items: center;
+      color: #9faccc;
+      font-weight: 600;
+      text-align: center;
+      padding: 1.4rem;
+    }
+
+    .video-note {
+      margin-top: 0.95rem;
+      font-size: 0.95rem;
+      color: #c1cae2;
+    }
+
+    .block {
+      background: linear-gradient(145deg, rgba(16, 23, 42, 0.95), rgba(13, 18, 33, 0.95));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.6rem;
+      box-shadow: var(--shadow);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-top: 1.4rem;
+    }
+
+    .list {
+      display: grid;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .list-item {
+      display: flex;
+      gap: 0.65rem;
+      align-items: flex-start;
+      color: #d4dcf2;
+      line-height: 1.6;
+    }
+
+    .list-item.negative {
+      color: #ffd3d3;
+    }
+
+    .list-item span:first-child {
+      font-weight: 700;
+      margin-top: 0.04rem;
+    }
+
+    .center-block {
+      text-align: center;
+      max-width: 840px;
+      margin: 0 auto;
+      display: grid;
+      gap: 1rem;
+    }
+
+    form {
+      margin-top: 1.4rem;
+      display: grid;
+      gap: 1.1rem;
+    }
+
+    .field {
+      display: grid;
+      gap: 0.45rem;
+    }
+
+    label {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #d7dff2;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 0.86rem 0.9rem;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: #0b1120;
+      color: var(--text);
+      font: inherit;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: rgba(240, 207, 123, 0.6);
+      box-shadow: 0 0 0 3px rgba(240, 207, 123, 0.2);
+    }
+
+    .submit-row {
+      margin-top: 0.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .small {
+      font-size: 0.9rem;
+      color: #aeb7cf;
+    }
+
+    .urgency {
+      border: 1px solid rgba(240, 207, 123, 0.35);
+      background: rgba(213, 169, 65, 0.1);
+    }
+
+    .final-push {
+      text-align: center;
+      display: grid;
+      gap: 1rem;
+      padding-bottom: 6.5rem;
+    }
+
+    .final-push .cta-btn {
+      justify-self: center;
+    }
+
+    .footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 1.4rem 0;
+      text-align: center;
+      color: #9ca8c8;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 920px) {
+      .hero-grid,
+      .split {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 5.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="tag">Private Investor Access</span>
+        <h1>Ready to Invest $20,000+ and Build Real Wealth Through Real Estate?</h1>
+        <p>
+          Get direct access to proven investment opportunities, business strategies, and mentorship from
+          Dr. Stephen Akintayo.
+        </p>
+        <p class="authority">Founder of Saci Holdings | Global Real Estate Investor | Business Coach</p>
+        <a href="#application" class="cta-btn">👉 Start Your Application</a>
+      </div>
+
+      <aside class="hero-card">
+        <h3>Watch This First</h3>
+        <div class="media" id="video-slot">
+          <div>
+            <p>Embed your training video here</p>
+            <p class="small">Replace this area with your YouTube, Vimeo, or hosted video embed.</p>
+          </div>
+        </div>
+        <p class="video-note">
+          I stream powerful training sessions covering real estate investment strategies, wealth-building principles,
+          and business growth systems.
+        </p>
+      </aside>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container block center-block">
+      <h2>This Is Not for Everyone</h2>
+      <p>
+        This page is designed for individuals who are ready to move beyond learning and start building. If
+        you have been looking for the right environment, mentorship, and opportunities to scale your wealth,
+        this is where it starts.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <article class="block">
+        <h2>Who This Is For</h2>
+        <div class="list">
+          <div class="list-item"><span>✔</span><span>You have at least $20,000 ready to invest</span></div>
+          <div class="list-item"><span>✔</span><span>You are serious about real estate or business growth</span></div>
+          <div class="list-item"><span>✔</span><span>You want guidance, not guesswork</span></div>
+          <div class="list-item"><span>✔</span><span>You are ready to take action, not just consume content</span></div>
+        </div>
+      </article>
+
+      <article class="block">
+        <h2>Who This Is Not For</h2>
+        <div class="list">
+          <div class="list-item negative"><span>❌</span><span>If you are just curious</span></div>
+          <div class="list-item negative"><span>❌</span><span>If you are not financially ready</span></div>
+          <div class="list-item negative"><span>❌</span><span>If you are looking for quick money</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container block">
+      <h2>What You Will Gain Access To</h2>
+      <div class="list">
+        <div class="list-item"><span>✅</span><span>High-growth real estate investment opportunities</span></div>
+        <div class="list-item"><span>✅</span><span>Proven strategies to scale your income and business</span></div>
+        <div class="list-item"><span>✅</span><span>Direct mentorship and guidance</span></div>
+        <div class="list-item"><span>✅</span><span>Access to a network of serious investors</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container block center-block">
+      <h2>Why This Matters</h2>
+      <p>
+        The difference between those who grow financially and those who do not is simple: <strong>Access + Action</strong>.
+        This is your opportunity to get both.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" id="application">
+    <div class="container block">
+      <span class="tag">Start Your Application</span>
+      <h2 style="margin-top: 0.8rem;">Fill this short form to qualify</h2>
+      <p style="margin-top: 0.65rem;">
+        Keep it clean, no fluff. If you are a good fit, you will be redirected to WhatsApp to continue.
+      </p>
+
+      <form id="qualification-form">
+        <div class="split">
+          <div class="field">
+            <label for="fullName">1. Full Name</label>
+            <input id="fullName" name="fullName" type="text" required placeholder="Enter your full name" />
+          </div>
+          <div class="field">
+            <label for="phone">2. Phone Number (WhatsApp)</label>
+            <input id="phone" name="phone" type="tel" required placeholder="+234..." />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="email">3. Email Address</label>
+          <input id="email" name="email" type="email" required placeholder="you@example.com" />
+        </div>
+
+        <div class="field">
+          <label for="profileType">4. What best describes you?</label>
+          <select id="profileType" name="profileType" required>
+            <option value="">Select one</option>
+            <option>Investor</option>
+            <option>Business Owner</option>
+            <option>Working Professional</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="goal">5. What is your primary goal right now?</label>
+          <select id="goal" name="goal" required>
+            <option value="">Select one</option>
+            <option>Invest in real estate</option>
+            <option>Start a business</option>
+            <option>Scale my current income</option>
+            <option>Get mentorship and direction</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="budget">6. How much are you ready to invest?</label>
+          <select id="budget" name="budget" required>
+            <option value="">Select one</option>
+            <option>$5,000 - $10,000</option>
+            <option>$10,000 - $20,000</option>
+            <option>$20,000 - $50,000</option>
+            <option>$50,000+</option>
+          </select>
+          <p class="small">Priority consideration is given to applicants at $20,000 and above.</p>
+        </div>
+
+        <div class="field">
+          <label for="timeline">7. How soon are you ready to get started?</label>
+          <select id="timeline" name="timeline" required>
+            <option value="">Select one</option>
+            <option>Immediately</option>
+            <option>Within 30 days</option>
+            <option>1-3 months</option>
+            <option>Just exploring</option>
+          </select>
+        </div>
+
+        <div class="submit-row">
+          <button type="submit" class="cta-btn">👉 Continue to WhatsApp</button>
+          <span class="small">You will be redirected after submission.</span>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container block urgency center-block">
+      <h2>Limited Access</h2>
+      <p>
+        Due to the level of mentorship and opportunities shared, only a limited number of applications are
+        accepted weekly.
+      </p>
+    </div>
+  </section>
+
+  <section class="section final-push">
+    <div class="container center-block">
+      <h2>Do Not Stay Stuck in Information</h2>
+      <p>You have watched enough. You have learned enough. Now it is time to position yourself for real results.</p>
+      <a href="#application" class="cta-btn">👉 Start your application now</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">© <span id="year"></span> Dr. Stephen Akintayo. All rights reserved.</div>
+  </footer>
+
+  <script>
+    (function () {
+      var form = document.getElementById("qualification-form");
+      var year = document.getElementById("year");
+      var whatsappUrl = "https://wa.link/gbwnf1";
+
+      year.textContent = String(new Date().getFullYear());
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+
+        window.location.href = whatsappUrl;
+      });
+    })();
+  </script>
+</body>
+</html>
