@@ -412,7 +412,7 @@
         Keep it clean, no fluff. If you are a good fit, you will be redirected to WhatsApp to continue.
       </p>
 
-      <form id="qualification-form">
+      <form id="qualification-form" action="https://formspree.io/f/xojygrzz" method="POST">
         <div class="split">
           <div class="field">
             <label for="fullName">1. Full Name</label>
@@ -509,6 +509,7 @@
       var form = document.getElementById("qualification-form");
       var year = document.getElementById("year");
       var whatsappUrl = "https://wa.link/gbwnf1";
+      var formspreeEndpoint = "https://formspree.io/f/xojygrzz";
 
       year.textContent = String(new Date().getFullYear());
 
@@ -520,7 +521,27 @@
           return;
         }
 
-        window.location.href = whatsappUrl;
+        var submitButton = form.querySelector('button[type="submit"]');
+        var originalText = submitButton.textContent;
+        submitButton.disabled = true;
+        submitButton.textContent = "Submitting...";
+
+        fetch(formspreeEndpoint, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { Accept: "application/json" },
+        })
+          .then(function (response) {
+            if (!response.ok) {
+              throw new Error("Submission failed");
+            }
+            window.location.href = whatsappUrl;
+          })
+          .catch(function () {
+            submitButton.disabled = false;
+            submitButton.textContent = originalText;
+            alert("Something went wrong while submitting. Please try again.");
+          });
       });
     })();
   </script>
