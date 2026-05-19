@@ -183,14 +183,16 @@
       border-radius: 14px;
       overflow: hidden;
       border: 1px solid var(--line);
-      background: #f4fbf6;
-      min-height: 280px;
-      display: grid;
-      place-items: center;
-      color: #3c6a52;
-      font-weight: 600;
-      text-align: center;
-      padding: 1.4rem;
+      background: #000;
+      aspect-ratio: 16 / 9;
+      min-height: 0;
+    }
+
+    .media iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
     }
 
     .video-note {
@@ -397,10 +399,12 @@
       <aside class="hero-card">
         <h3>Watch This First</h3>
         <div class="media" id="video-slot">
-          <div>
-            <p>Embed your training video here</p>
-            <p class="small">Replace this area with your YouTube, Vimeo, or hosted video embed.</p>
-          </div>
+          <iframe
+            src="https://www.youtube.com/embed/MOuDWRAKlhg"
+            title="Dr. Stephen Akintayo training stream"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
         </div>
         <p class="video-note">
           I stream powerful training sessions covering real estate investment strategies, wealth-building principles,
